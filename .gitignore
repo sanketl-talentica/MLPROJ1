@@ -28,6 +28,7 @@ logs/
 # ML artifacts (models, data)
 artifacts/
 dataset/*
+*.pkl
 
 # MLflow
 mlruns/
