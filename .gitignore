@@ -27,6 +27,7 @@ logs/
 
 # ML artifacts (models, data)
 artifacts/
+dataset/*
 
 # MLflow
 mlruns/

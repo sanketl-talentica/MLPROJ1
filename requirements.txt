@@ -6,3 +6,8 @@ imbalanced-learn
 lightgbm
 mlflow
 flask
+seaborn
+statsmodels
+imbalanced-learn
+xgboost 
+lightgbm

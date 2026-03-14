@@ -1,0 +1,27 @@
+data_ingestion:
+  local_data_path : "dataset/Smartphone_Usage_And_Addiction_Analysis_7500_Rows.csv"
+  train_ratio : 0.8
+
+data_processing:
+  target_column: "addicted_label"
+  drop_columns:
+    - "Unnamed: 0"
+    - "transaction_id"
+    - "user_id"
+    - "addiction_level"
+  categorical_columns:
+    - gender
+    - stress_level
+    - academic_work_impact
+  numerical_columns:
+    - age
+    - daily_screen_time_hours
+    - social_media_hours
+    - gaming_hours
+    - work_study_hours
+    - sleep_hours
+    - notifications_per_day
+    - app_opens_per_day
+    - weekend_screen_time
+  skewness_threshold : 5
+  no_of_features : 10

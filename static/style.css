@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    color: #a0aec0;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.3s, background 0.3s;
+}
+
+input[type="number"]:focus,
+select:focus {
+    border-color: #63b3ed;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+select option {
+    background: #16213e;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.result {
+    margin-top: 24px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.result-cancel {
+    background: rgba(229, 62, 62, 0.2);
+    border: 1px solid rgba(229, 62, 62, 0.5);
+}
+
+.result-nocancel {
+    background: rgba(72, 187, 120, 0.2);
+    border: 1px solid rgba(72, 187, 120, 0.5);
+}
