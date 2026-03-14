@@ -1,4 +1,5 @@
 import os
+import json
 import time
 import pandas as pd
 import joblib
@@ -151,6 +152,11 @@ class ModelTraining:
                 best_lgbm_model = self.train_lgbm(X_train,y_train)
                 metrics = self.evaluate_model(best_lgbm_model ,X_test , y_test)
                 self.save_model(best_lgbm_model)
+
+                # Write metrics to metrics.json for DVC to track
+                with open("metrics.json", "w") as f:
+                    json.dump(metrics, f, indent=4)
+                logger.info("Metrics saved to metrics.json")
 
                 # Log model file so it can be loaded or deployed directly from MLflow
                 logger.info("Logging the model into MLFLOW")

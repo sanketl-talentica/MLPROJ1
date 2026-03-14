@@ -1,4 +1,4 @@
-pandas 
+pandas
 numpy
 scikit-learn
 pyyaml
@@ -8,6 +8,5 @@ mlflow
 flask
 seaborn
 statsmodels
-imbalanced-learn
-xgboost 
-lightgbm
+xgboost
+dvc

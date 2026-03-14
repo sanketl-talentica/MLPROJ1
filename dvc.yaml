@@ -1,0 +1,35 @@
+stages:
+  data_ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+      - src/data_ingestion.py
+      - config/config.yaml
+      - dataset/Smartphone_Usage_And_Addiction_Analysis_7500_Rows.csv
+    outs:
+      - artifacts/raw/raw.csv
+      - artifacts/raw/train.csv
+      - artifacts/raw/test.csv
+
+  data_preprocessing:
+    cmd: python src/data_preprocessing.py
+    deps:
+      - src/data_preprocessing.py
+      - config/config.yaml
+      - artifacts/raw/train.csv
+      - artifacts/raw/test.csv
+    outs:
+      - artifacts/processed/processed_train.csv
+      - artifacts/processed/processed_test.csv
+
+  model_training:
+    cmd: python src/model_training.py
+    deps:
+      - src/model_training.py
+      - config/model_params.py
+      - artifacts/processed/processed_train.csv
+      - artifacts/processed/processed_test.csv
+    outs:
+      - artifacts/models/lgbm_model.pkl
+    metrics:
+      - metrics.json:
+          cache: false
