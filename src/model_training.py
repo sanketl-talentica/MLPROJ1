@@ -174,9 +174,13 @@ class ModelTraining:
                     json.dump(metrics, f, indent=4)
                 logger.info("Metrics saved to metrics.json")
 
-                # Log model file so it can be loaded or deployed directly from MLflow
-                logger.info("Logging the model into MLFLOW")
-                mlflow.log_artifact(self.model_output_path)
+                # Register model in MLflow Model Registry — creates versioned entries on DagsHub
+                logger.info("Registering model to MLflow Model Registry")
+                mlflow.lightgbm.log_model(
+                    best_lgbm_model,
+                    artifact_path="model",
+                    registered_model_name="SmartphoneAddictionModel"
+                )
 
                 # Log params and metrics so different runs can be compared in the MLflow UI
                 logger.info("Logging Params and metrics to MLFLOW")
