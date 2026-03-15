@@ -10,3 +10,5 @@ seaborn
 statsmodels
 xgboost
 dvc
+dagshub
+python-dotenv

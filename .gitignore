@@ -57,5 +57,4 @@ Thumbs.db
 .coverage
 htmlcov/
 
-*.lock
 mlflow.db

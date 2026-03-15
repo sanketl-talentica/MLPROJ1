@@ -13,8 +13,13 @@ from config.model_params import *
 from utils.common import read_yaml,load_data
 from scipy.stats import randint
 
+import dagshub
 import mlflow
 import mlflow.sklearn
+from dotenv import load_dotenv
+
+load_dotenv()
+dagshub.init(repo_owner='ealderson891', repo_name='smartphone-additction-detection', mlflow=True)
 
 logger = get_logger(__name__)
 
@@ -138,7 +143,11 @@ class ModelTraining:
 
     def run(self):
         try:
+            mlflow.set_experiment("Smartphone Addiction Detection")
             with mlflow.start_run():
+                mlflow.set_tag("model_type", "LightGBM")
+                mlflow.set_tag("dataset", "Smartphone_Usage_7500_Rows")
+
                 logger.info("Starting our Model Training pipeline")
 
                 logger.info("Starting our MLFLOW experimentation")
