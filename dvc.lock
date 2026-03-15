@@ -73,8 +73,8 @@ stages:
       size: 628
     - path: src/model_training.py
       hash: md5
-      md5: 744908ba200f32d886f797f94c0ff8fe
-      size: 8764
+      md5: f2f0555916a9a6ebab70e8ff5a24f950
+      size: 8944
     outs:
     - path: artifacts/models/lgbm_model.pkl
       hash: md5
