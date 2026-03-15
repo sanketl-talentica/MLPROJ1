@@ -4,7 +4,7 @@ with open("requirements.txt") as f:
     requirements = f.read().splitlines()
 
 setup(
-    name="MLPROJ1",
+    name="mlops-smartphone-addiction-detection",
     version="1.0",
     author="Sanket Lawande",
     packages=find_packages(),
